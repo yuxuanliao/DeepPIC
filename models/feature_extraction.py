@@ -408,7 +408,7 @@ if __name__ == '__main__':
     input_data = Input(shape=(256, 256, 1))
     model = get_unet(input_data, n_filters=64, dropout=0.5, batchnorm=True, padding='same')
     model.compile(optimizer=Adam(lr = 0.001), loss="binary_crossentropy", metrics=["accuracy"])
-    model.load_weights('C:/Users/yxliao/Desktop/Smartgit3/release_DeepPIC/best_unet2_zz.h5')
+    model.load_weights('C:/Users/yxliao/Desktop/Smartgit4/release_DeepPIC/best_unet2_zz.h5')
     preds = model.predict(scaler(array),batch_size=1,verbose=1)
     pred_array_int = pred_array(0, preds, array)
     pred_array_mz = pred_array(2, preds, array)
