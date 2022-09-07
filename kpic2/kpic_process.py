@@ -73,15 +73,15 @@ if __name__ == '__main__':
     groups_align = kpic_iso(groups_align3)
     data = kpic_mat(groups_align)
     data = kpic_fill(data)
-    result = kpic_pattern(data, file1 = "C:/Users/yxliao/Desktop/Smartgit3/DeepPIC/s111.csv")
+    result = kpic_pattern(data, file1 = "C:/Users/yxliao/Desktop/Smartgit3/DeepPIC/s111_20220906.csv")
     #data = kpic_datatf(data)
     #df = pd.DataFrame(data)
     #df.to_csv("D:/Dpic/data2/leaf_seed/s111_lyx20220831.csv", index=True, header=True)
     
     #OPLS-DA
-    data = pd.read_csv("C:/Users/yxliao/Desktop/Smartgit3/DeepPIC/files/s_python.csv",encoding='gbk')
+    data = pd.read_csv("C:/Users/yxliao/Desktop/Smartgit4/DeepPIC/kpic2/files/s_python.csv",encoding='gbk')
     X = np.array(data.values[:,1:].T,dtype=float)
-    Y= np.array([0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1])  #20个样品对应的标签
+    Y= np.array([0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1])  #label
     opls = OPLS(1)
     Z = opls.fit_transform(X, Y)
     pls = PLSRegression(1)
@@ -122,18 +122,20 @@ if __name__ == '__main__':
     plt.legend(loc = 'best', prop={'family' : 'Calibri', 'size' : 25})
     
     #permutation
-    kf = KFold(n_splits = 5, shuffle=True, random_state=420) 
-    permutation_scores = permutation_test_score(pls, Z, Y, groups= None , cv=kf,
-                               n_permutations=2000, n_jobs=1, random_state=420,
-                               verbose=0, fit_params=None)
+    with warnings.catch_warnings():
+        warnings.filterwarnings("ignore")
+        kf = KFold(n_splits = 5, shuffle=True, random_state=420) 
+        permutation_scores = permutation_test_score(pls, Z, Y, groups= None , cv=kf,
+                                   n_permutations=2000, n_jobs=1, random_state=420,
+                                   verbose=0, fit_params=None)
     fig = plt.figure()
     ax2 = fig.add_subplot(111)
-    bwith = 2 #边框宽度设置为2
-    TK = plt.gca()#获取边框
-    TK.spines['bottom'].set_linewidth(bwith)#图框下边
-    TK.spines['left'].set_linewidth(bwith)#图框左边
-    TK.spines['top'].set_linewidth(bwith)#图框上边
-    TK.spines['right'].set_linewidth(bwith)#图框右边
+    bwith = 2 
+    TK = plt.gca()
+    TK.spines['bottom'].set_linewidth(bwith)
+    TK.spines['left'].set_linewidth(bwith)
+    TK.spines['top'].set_linewidth(bwith)
+    TK.spines['right'].set_linewidth(bwith)
 
     font = {'family' : 'Calibri',
     'weight' : 'normal',
@@ -160,7 +162,7 @@ if __name__ == '__main__':
     from sklearn.metrics import r2_score
     import matplotlib.pyplot as plt
      
-    DATA = pd.read_csv("C:/Users/yxliao/Desktop/Smartgit3/DeepPIC/files/s_python.csv", encoding='gbk')
+    DATA = pd.read_csv("C:/Users/yxliao/Desktop/Smartgit4/DeepPIC/kpic2/files/s_python.csv", encoding='gbk')
 
     X = np.array(DATA.values[:,1:].T,dtype=float)
     COMs = DATA.values[:,0]
