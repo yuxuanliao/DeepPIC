@@ -83,7 +83,7 @@ The example code for feature extraction is included in the [extract.ipynb](extra
 The example code for integrating DeepPIC into KPIC2 to implement the whole process of metabolomics processing is included in the [Integration_into_KPIC2.ipynb](Integration_into_KPIC2.ipynb).
 
 ## Start from raw LC-MS dataset to discriminant model
-By running [extract.py](DeepPIC/extract.py), user can use DeepPIC to extract PICs from each LC-MS file in the metabolomics dataset. The whole process of metabolomics processing can be implemented by running [KPIC2.py](KPIC2/KPIC2.py) directly. Please refer to [extract.ipynb](extract.ipynb) and [Integration_into_KPIC2.ipynb](Integration_into_KPIC2.ipynb) for details. Thus, DeepPIC combined with KPIC2 can provide the entire pipeline from raw data to discriminant models for metabolomic datasets.
+By running [extract.py](DeepPIC/extract.py), user can use DeepPIC to extract PICs from each LC-MS file in the metabolomics dataset. The whole process of metabolomics processing can be implemented by running [KPIC2.py](KPIC2/KPIC2.py) directly. Please refer to [extract.ipynb](extract.ipynb) and [Integration_into_KPIC2.ipynb](Integration_into_KPIC2.ipynb) for details. Thus, you can use DeepPIC+KPIC2 to process your data.
 
 ## Information of maintainers
 - 212311021@csu.edu.cn
