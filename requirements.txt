@@ -10,4 +10,3 @@ numba==0.53.1
 multiprocess==0.70.12.2
 pyopenms==2.6.0
 rpy2==3.5.1
-pyopls
