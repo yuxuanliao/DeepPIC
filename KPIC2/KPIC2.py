@@ -79,7 +79,6 @@ if __name__ == '__main__':
     uncorrected_q2 = r2_score(Y, cross_val_predict(pls, X, Y, cv=LeaveOneOut()))
     corrected_q2 = r2_score(Y, cross_val_predict(pls, Z, Y, cv=LeaveOneOut()))
     pls.fit_transform(Z, Y)
-
     fig = plt.figure()
     ax = fig.add_subplot(111)
     bwith = 2
@@ -143,9 +142,7 @@ if __name__ == '__main__':
     #vip     
     X = np.array(data.values[:,1:].T,dtype=float)
     COMs = data.values[:,0]
-
     VIPs = vip(Z, Y, pls)   
-
     COM = []
     VIP = []
 
