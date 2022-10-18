@@ -1,5 +1,5 @@
 # DeepPIC
-This is the code repo for the paper *Deep Learning-based Pure Ion Chromatogram Extraction for LC-MS*. We developed a deep learning-based pure ion chromatogram method (DeepPIC) for extracting PICs from raw data files directly and automatically. The DeepPIC method has already been integrated into the KPIC2 framework. The combination can provide the entire pipeline from raw data to discriminant models for metabolomic datasets.
+This is the code repo for the paper *Highly Automatic and Universal Approach for Extracting Features from LC-MS Data Using Deep Learning*. We developed a deep learning-based pure ion chromatogram method (DeepPIC) for extracting PICs from raw data files directly and automatically. The DeepPIC method has already been integrated into the KPIC2 framework. The combination can provide the entire pipeline from raw data to discriminant models for metabolomic datasets.
 
 <div align="center">
 <img src="https://github.com/yuxuanliao/DeepPIC/blob/main/Workflow of the DeepPIC method.png" width=917 height=788 />
