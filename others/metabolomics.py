@@ -15,9 +15,9 @@ import matplotlib.pyplot as plt
 plt.rc('font',family='Calibri') 
 
 #OPLS-DA
-data = pd.read_csv("C:/Users/yxliao/Desktop/Smartgit3/DeepPIC/s_python.csv",encoding='gbk')   #
+data = pd.read_csv("../KPIC2/files/KPIC2_result_plot.csv",encoding='gbk')   #
 X = np.array(data.values[:,1:].T,dtype=float)
-Y= np.array([0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1])  #20个样品对应的标签
+Y= np.array([0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1])  #20labels
 opls = OPLS(1)
 Z = opls.fit_transform(X, Y)
 pls = PLSRegression(1)
@@ -29,12 +29,12 @@ pls.fit_transform(Z, Y)
 
 fig = plt.figure()
 ax = fig.add_subplot(231)
-bwith = 2 #边框宽度设置为2
-TK = plt.gca()#获取边框
-TK.spines['bottom'].set_linewidth(bwith)#图框下边
-TK.spines['left'].set_linewidth(bwith)#图框左边
-TK.spines['top'].set_linewidth(bwith)#图框上边
-TK.spines['right'].set_linewidth(bwith)#图框右边
+bwith = 2 
+TK = plt.gca()
+TK.spines['bottom'].set_linewidth(bwith)
+TK.spines['left'].set_linewidth(bwith)
+TK.spines['top'].set_linewidth(bwith)
+TK.spines['right'].set_linewidth(bwith)
 
 font = {'family' : 'Calibri',
 'weight' : 'normal',
@@ -159,12 +159,12 @@ permutation_scores = permutation_test_score(pls, Z, Y, groups= None , cv=kf,
 
 import matplotlib.pyplot as plt
 ax2 = fig.add_subplot(232)
-bwith = 2 #边框宽度设置为2
-TK = plt.gca()#获取边框
-TK.spines['bottom'].set_linewidth(bwith)#图框下边
-TK.spines['left'].set_linewidth(bwith)#图框左边
-TK.spines['top'].set_linewidth(bwith)#图框上边
-TK.spines['right'].set_linewidth(bwith)#图框右边
+bwith = 2 
+TK = plt.gca()
+TK.spines['bottom'].set_linewidth(bwith)
+TK.spines['left'].set_linewidth(bwith)
+TK.spines['top'].set_linewidth(bwith)
+TK.spines['right'].set_linewidth(bwith)
 
 font = {'family' : 'Calibri',
 'weight' : 'normal',
@@ -213,7 +213,7 @@ def vip(x, y, model):
 import matplotlib.pyplot as plt
 import seaborn as sns  
  
-DATA = pd.read_csv("C:/Users/yxliao/Desktop/Smartgit3/DeepPIC/s_python.csv", encoding='gbk')  #
+DATA = pd.read_csv("../KPIC2/files/KPIC2_result_plot.csv", encoding='gbk')  #
 
 X = np.array(DATA.values[:,1:].T,dtype=float)
 COMs = DATA.values[:,0]
@@ -239,12 +239,12 @@ for jj in range(len(COM)):
 
 fig = plt.figure()
 ax11 = fig.add_subplot(231)
-bwith = 2 #边框宽度设置为2
-TK = plt.gca()#获取边框
-TK.spines['bottom'].set_linewidth(bwith)#图框下边
-TK.spines['left'].set_linewidth(bwith)#图框左边
-TK.spines['top'].set_linewidth(bwith)#图框上边
-TK.spines['right'].set_linewidth(bwith)#图框右边
+bwith = 2 
+TK = plt.gca()
+TK.spines['bottom'].set_linewidth(bwith)
+TK.spines['left'].set_linewidth(bwith)
+TK.spines['top'].set_linewidth(bwith)
+TK.spines['right'].set_linewidth(bwith)
 
 font = {'family' : 'Calibri',
 'weight' : 'normal',
